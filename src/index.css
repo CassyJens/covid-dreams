@@ -3,11 +3,45 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-family: 'Amatic SC', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  background-color: #f0f5f9;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+  font-family: 'Amatic SC', cursive;
+  
+}
+
+.MuiTab-root {
+  text-transform: lowercase !important; 
+} 
+
+.MuiAppBar-colorPrimary {
+  background-color: lightslategray !important;
+}
+
+.PrivateTabIndicator-colorSecondary-66 {
+  background-color: lightsalmon !important;
+}
+.appContainer {
+  margin: 200px;
+}
+
+textarea {
+  width: 400px;
+}
+
+button.formButton {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 50px !important;
 }

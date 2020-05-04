@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainNav from './MainNav';
+import AppBar from '@material-ui/core/AppBar';
+import MainApp from './MainApp';
+import HopesContent from './HopesContent';
+import FearsContent from './FearsContent';
+import HomeContent from './HomeContent';
 
 function App() {
+
+  const [clickedIdx, setValue] = React.useState(0);
+
+  const handleNavClick = (event, newValue) => {
+      console.log("new idx is " + newValue);
+      setValue(newValue);
+  };
+
+  const pages = [
+    <HomeContent clickedIdx={clickedIdx} />,
+    <HopesContent clickedIdx={clickedIdx} />,
+    <FearsContent clickedIdx={clickedIdx} />
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <AppBar position="static">
+        <MainNav onClick={handleNavClick} clickedIdx={clickedIdx} />
+      </AppBar>
+      <MainApp content={pages[clickedIdx]}/>
+    </ div>
   );
 }
 
