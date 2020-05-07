@@ -9,12 +9,7 @@ class FearsContent extends React.Component {
     render () {
         return (
             <div className="appContainer">
-                {
-                    defaultText.split('\n').map(i => {
-                        return <h2>{i}</h2>
-                    })
-                }
-                {/* <TextField variant="filled"></TextField> */}
+                <h2> {defaultText} </h2>
                 <TextareaAutosize variant="filled" aria-label="empty textarea" rowsMin={10} />
                 <Button variant="contained" className="formButton">
                     {buttonText}
