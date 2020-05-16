@@ -25,11 +25,16 @@ function App() {
     return <div className="categoryDiv" onClick={handleRightClicked}><h1 className="clickableHeader"> Fears </h1></div>;
   }
 
+  function handleBackClick () {
+    setLeftClicked(false);
+    setRightClicked(false);
+  }
+
   function getContent() {
     if (leftClicked) {
-      return <MainApp content={<HopesContent />}/>
+      return <MainApp content={<HopesContent handleBackClick={handleBackClick} />}/>
     } else if (rightClicked) {
-      return <MainApp content={<FearsContent />}/>
+      return <MainApp content={<FearsContent handleBackClick={handleBackClick} />}/>
     } else {
       return <div>
               <LeftContent />

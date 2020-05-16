@@ -16,6 +16,7 @@ class HopesContent extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleBackClick = this.handleBackClick.bind(this);
     }
 
     componentDidMount () {
@@ -29,6 +30,10 @@ class HopesContent extends React.Component {
               
             });
         });
+    }
+
+    handleBackClick() {
+        this.props.handleBackClick();
     }
 
     handleChange(e) {
@@ -54,7 +59,8 @@ class HopesContent extends React.Component {
 
     render () {
         return (
-            <div className="appContainer">
+            <div className="appContainer hopesContent">
+                <div className="backArrow" onClick={this.handleBackClick}> <h2> Back </h2> </div>
                 <h2> {defaultText} </h2>
                 <form onSubmit={this.handleSubmit}>
                     <TextareaAutosize 

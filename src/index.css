@@ -93,3 +93,10 @@ button.formButton {
   margin-right: auto !important;
   margin-top: 50px !important;
 }
+
+.backArrow {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  cursor: pointer;
+}
