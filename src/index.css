@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  background-color: #f0f5f9;
+  background-color: #73b2cd54;
 }
 
 code {
@@ -15,9 +15,57 @@ code {
     monospace;
 }
 
+h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #fc633b;
+  font-size: 100px;
+  width: 50%;
+  margin: AUTO;
+  margin-top: 100px;
+}
+
 h2 {
   font-family: 'Amatic SC', cursive;
-  
+  color: #004279;
+}
+
+h2.clickableHeader {
+  font-size: 75px;
+  cursor: pointer;
+}
+
+h2.clickableHeader:hover {
+  opacity: 50%;
+}
+
+h1.clickableHeader {
+  font-size: 100px;
+  cursor: pointer;
+}
+
+h1.clickableHeader:hover {
+  opacity: 40%;
+}
+
+div.categoryDiv {
+  display: inline-block;
+  width: 50%;
+  height: 1000px;
+  background-color: #40719b;
+  padding-top: 200px;
+}
+
+div.categoryDiv:hover {
+  background-color: #6692B7;
+  cursor: pointer;
+}
+
+div.categoryDiv:first-of-type {
+  background-color: #bdd430;
+}
+
+div.categoryDiv:first-of-type:hover {
+  background-color: #d1e855;
 }
 
 .MuiTab-root {

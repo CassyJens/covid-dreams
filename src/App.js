@@ -1,33 +1,45 @@
 import React from 'react';
 import './App.css';
-import MainNav from './MainNav';
-import AppBar from '@material-ui/core/AppBar';
 import MainApp from './MainApp';
 import HopesContent from './HopesContent';
 import FearsContent from './FearsContent';
-import HomeContent from './HomeContent';
 
 function App() {
 
-  const [clickedIdx, setValue] = React.useState(0);
+  const [leftClicked, setLeftClicked] = React.useState(false);
+  const [rightClicked, setRightClicked] = React.useState(false);
 
-  const handleNavClick = (event, newValue) => {
-      console.log("new idx is " + newValue);
-      setValue(newValue);
-  };
+  const handleLeftClicked = (event, newValue) => {
+    setLeftClicked(true);
+  }
 
-  const pages = [
-    <HomeContent clickedIdx={clickedIdx} />,
-    <HopesContent clickedIdx={clickedIdx} />,
-    <FearsContent clickedIdx={clickedIdx} />
-  ];
+  const handleRightClicked = (event, newValue) => {
+    setRightClicked(true);
+  }
 
+  function LeftContent() {
+    return <div className="categoryDiv" onClick={handleLeftClicked}><h1 className="clickableHeader"> Hopes </h1></div>;
+  }
+
+  function RightContent () {
+    return <div className="categoryDiv" onClick={handleRightClicked}><h1 className="clickableHeader"> Fears </h1></div>;
+  }
+
+  function getContent() {
+    if (leftClicked) {
+      return <MainApp content={<HopesContent />}/>
+    } else if (rightClicked) {
+      return <MainApp content={<FearsContent />}/>
+    } else {
+      return <div>
+              <LeftContent />
+              <RightContent />
+            </div>;
+    }
+  }
   return (
     <div className="App">
-      <AppBar position="static">
-        <MainNav onClick={handleNavClick} clickedIdx={clickedIdx} />
-      </AppBar>
-      <MainApp content={pages[clickedIdx]}/>
+      {getContent()}
     </ div>
   );
 }

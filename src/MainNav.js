@@ -14,7 +14,6 @@ class MainNav extends React.Component {
     render () {
         return (
             <Tabs value={this.props.clickedIdx} onChange={this.props.onClick} aria-label="simple tabs">
-                <Tab label="home" {...getTabProps(0)} />
                 <Tab label="hopes" {...getTabProps(1)} />
                 <Tab label="fears" {...getTabProps(2)} />
             </Tabs>
